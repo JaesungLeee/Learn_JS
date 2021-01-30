@@ -40,7 +40,7 @@ document.title = "WTF" // 웹창의 타이틀 변경
 
 
 // querySelector : document에서 모든 자식들 중 찾으려고 함.
-const id = document.querySelector("#title")
+// const id = document.querySelector("#title")
 
 
 // #2.4 Events and event handlers
@@ -61,3 +61,75 @@ title.addEventListener("click", handleClick)
 
 
 // #2.5 JS condition grammar
+// if문
+
+// if(1 > 5) { // check true
+//     console.log("HI")
+// }
+// else {
+//     console.log("HO")
+// }
+
+// if("jslee" === "leejs") { // === 는 참인지 체크하는 것
+//     console.log("HI")
+// }
+// else {
+//     console.log("HO")
+// }
+
+// if(20 > 45 || "jslee" === "jslee") { // &&연산자 + ||연산자도 가능
+//     console.log("YES")
+// }
+// else {
+//     console.log("NOP")
+// }
+
+// const age = prompt("How old are you?") // Prompt : User에게 물어보는 것 alert dialog 같은 것 + customize 가능
+// console.log(age)
+
+// if (age >= 18 && age <= 21) {
+//     console.log("You can drink but you should not")
+// }
+// else if (age > 21) {
+//     console.log("You can")
+// }
+// else {
+//     console.log("Too young")
+// }
+
+// #2.6 Function practice
+
+const id = document.querySelector("#title")
+
+const BASE_COLOR = "red"
+const OTHER_COLOR = "blue"
+
+function handleClick() {
+    const currentColor = id.style.color
+    
+    if (currentColor === BASE_COLOR) {
+        id.style.color = OTHER_COLOR
+    }
+    else {
+        id.style.color = BASE_COLOR
+    }
+}
+
+function init() {
+    id.style.color = BASE_COLOR
+    id.addEventListener("click", handleClick) // "mouseenter"
+}
+
+init()
+
+
+function handleOffline() {
+    console.log("NETWORK OFFLINE")
+}
+
+function handleOnline() {
+    console.log("Welcome Back")
+}
+
+window.addEventListener("offline", handleOffline) // 인터넷 연결 끊겼을때 
+window.addEventListener("online", handleOnline) // 인터넷 연결 될때
