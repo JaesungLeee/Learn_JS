@@ -7,11 +7,19 @@ function getTime() {
     const hours = date.getHours()
     const seconds = date.getSeconds()
     
-    clockTitle.innerText = `${hours} : ${minute} : ${seconds}`
+    // clockTitle.innerText = `${hours} : ${minute} : ${seconds}`
+    clockTitle.innerText = `${
+        hours < 10 ? `0${hours}` : hours
+        } : ${
+        minute < 10 ? `0${minute}` : minute
+        } : ${
+        seconds < 10 ? `0${seconds}` : seconds // 삼항연산자 : true면 앞에꺼 false면 뒤에꺼
+    }`
+
 }
 
 function init() {
-    getTime()
+    setInterval(getTime, 1000) // getTime함수를 1초에 한번씩 call해서 시계처럼 보이게
 }
 
 init()
