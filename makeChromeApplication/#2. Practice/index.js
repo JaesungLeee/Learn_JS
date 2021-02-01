@@ -99,28 +99,28 @@ title.addEventListener("click", handleClick)
 
 // #2.6 Function practice
 
-const id = document.querySelector("#title")
+// const id = document.querySelector("#title")
 
-const BASE_COLOR = "red"
-const OTHER_COLOR = "blue"
+// const BASE_COLOR = "red"
+// const OTHER_COLOR = "blue"
 
-function handleClick() {
-    const currentColor = id.style.color
+// function handleClick() {
+//     const currentColor = id.style.color
     
-    if (currentColor === BASE_COLOR) {
-        id.style.color = OTHER_COLOR
-    }
-    else {
-        id.style.color = BASE_COLOR
-    }
-}
+//     if (currentColor === BASE_COLOR) {
+//         id.style.color = OTHER_COLOR
+//     }
+//     else {
+//         id.style.color = BASE_COLOR
+//     }
+// }
 
-function init() {
-    id.style.color = BASE_COLOR
-    id.addEventListener("click", handleClick) // "mouseenter"
-}
+// function init() {
+//     id.style.color = BASE_COLOR
+//     id.addEventListener("click", handleClick) // "mouseenter"
+// }
 
-init()
+// init()
 
 
 function handleOffline() {
@@ -133,3 +133,34 @@ function handleOnline() {
 
 window.addEventListener("offline", handleOffline) // 인터넷 연결 끊겼을때 
 window.addEventListener("online", handleOnline) // 인터넷 연결 될때
+
+
+// #2.7 Function Practice part.2
+
+const id = document.querySelector("#title")
+
+const CLICKED_CLASS = "clicked"
+
+// function handleClick() {
+//     // const currentClass = id.className
+//     const hasClass = id.classList.contains(CLICKED_CLASS)
+
+//     // console.log(currentClass)
+//     if (hasClass) {
+//         // id.className = ""
+//         id.classList.remove(CLICKED_CLASS) //r같은의미
+//     }
+//     else {
+//         // id.className = CLICKED_CLASS
+//         id.classList.add(CLICKED_CLASS) // 같은의미
+//     }
+// }
+
+function handleClick() {
+    id.classList.toggle(CLICKED_CLASS) // toggle은 위에 function을 하는 역할
+}
+function init() {
+    id.addEventListener("click", handleClick) // "mouseenter"
+}
+
+init()
