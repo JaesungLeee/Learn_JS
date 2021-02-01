@@ -131,38 +131,22 @@ function loadName() {
 </details>
 
 <details>
-<summary>Lecture 3.1 JS Clock Part 2.</summary>
+<summary>Lecture 3.4 Making To Do List Part 1.</summary>
 <br>
 
-> setInterval 함수
->> setInterval (fn, milsec) [fn : 함수명]
+> Emoji 사용
+>> meta 적용
 
+<index.html>
+```html
+<head>
+    <title>Something</title>
+    <meta charset="utf-8" />
 
-```javascript
-function sayHi() {
-    console.log("HI")
-}
-
-setInterval(sayHi, 1000)
+    <link rel="stylesheet" href="index.css" /> <!--CSS 사용법-->
+</head>
 ```
-
-이렇게 하면 sayHi 함수가 1초에 한번씩 call 됨.
-
 <br>
 
-> 삼항연산자
->> 조건 ? True : False
-
-<clock.js>
-
-```javascript
-clockTitle.innerText = `${
-    hours < 10 ? `0${hours}` : hours
-    } : ${
-    minute < 10 ? `0${minute}` : minute
-    } : ${
-    seconds < 10 ? `0${second}` : second
-    }`
-```
 
 </details>
