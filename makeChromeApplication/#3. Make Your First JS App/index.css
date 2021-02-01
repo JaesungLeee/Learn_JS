@@ -1,0 +1,33 @@
+body {
+    background-color :peru;
+}
+
+h1 {
+    color : #34495e ;
+    transition : color .5s ease-in-out;
+}
+
+/* CSS에서 id로 뭘 하려면
+
+    # title {
+        asfasdfasdf
+    } 
+
+    이렇게 해야함*/
+
+
+.clicked { /*class*/
+    color : #7f8c8d;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.form, .greetings {
+    display: none;
+}
+
+.showing {
+    display: block;
+}
