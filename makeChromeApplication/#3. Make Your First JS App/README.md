@@ -60,3 +60,72 @@ clockTitle.innerText = `${
 ```
 
 </details>
+
+
+<details>
+<summary>Lecture 3.2~3 Saving the User Name part 1. 2.</summary>
+<br>
+
+> css display 속성
+>> display : block
+
+```css
+.showing {
+    display: block;
+}
+```
+
+css에 대한 공부 필요! (아직 잘 모르겠음..ㅠ) : [2021/02/01]
+
+<br>
+
+> js class name 
+>> showing : 보여지는 것
+
+<greeting.js>
+```javascript
+function paintGreeting(text) {
+    form.classList.remove(SHOWING_CLASS_NAME)
+    greeting.classList.add(SHOWING_CLASS_NAME)
+    greeting.innerText = `Hello ${text}`
+}
+```
+
+1. form id가 가지고 있던 class인 showing을 없애고 greeting id에 showing class를 추가
+
+2. 결과적으로 paintGreeting fun이 call되면 inputForm이 사라지고 text가 보임
+
+<br>
+
+> locaStorage
+>> .setItem("KEY", "value") <br>
+>> .getItem("KEY) -> return값 : "value"
+
+<greeting.js>
+
+```javascript
+function saveName(text) {
+    localStorage.setItem(USER_LOCAL_STORAGE, text)
+}
+```
+
+```javascript
+function loadName() {
+    const currentUser = localStorage.getItem(USER_LOCAL_STORAGE)
+
+    if (currentUser === null) { 
+        askForName()
+    }
+    else {
+        paintGreeting(currentUser)
+    }
+
+}
+```
+
+1. localStorage.setItem <br>
+: USER_LOCAL_STORAGE라는 key와 text라는 value를 localStorage에 저장
+2. localStorage.getItem <br>
+: USER_LOCAL_STORAGE라는 key를 가지는 value를 return
+
+</details>
