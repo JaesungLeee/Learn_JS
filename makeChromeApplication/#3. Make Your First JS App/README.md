@@ -129,3 +129,40 @@ function loadName() {
 : USER_LOCAL_STORAGE라는 key를 가지는 value를 return
 
 </details>
+
+<details>
+<summary>Lecture 3.1 JS Clock Part 2.</summary>
+<br>
+
+> setInterval 함수
+>> setInterval (fn, milsec) [fn : 함수명]
+
+
+```javascript
+function sayHi() {
+    console.log("HI")
+}
+
+setInterval(sayHi, 1000)
+```
+
+이렇게 하면 sayHi 함수가 1초에 한번씩 call 됨.
+
+<br>
+
+> 삼항연산자
+>> 조건 ? True : False
+
+<clock.js>
+
+```javascript
+clockTitle.innerText = `${
+    hours < 10 ? `0${hours}` : hours
+    } : ${
+    minute < 10 ? `0${minute}` : minute
+    } : ${
+    seconds < 10 ? `0${second}` : second
+    }`
+```
+
+</details>
