@@ -99,7 +99,9 @@ function paintGreeting(text) {
 
 > locaStorage
 >> .setItem("KEY", "value") <br>
->> .getItem("KEY) -> return값 : "value"
+>> .getItem("KEY) -> return값 : "value" <br>
+>> javaScript의 localStorage는 value를 모두 String으로 저장한다!
+>>> JSON.stringify(parameter) : JS object를 String으로 바꿔준다! [3.5 보기]
 
 <greeting.js>
 
@@ -148,5 +150,59 @@ function loadName() {
 ```
 <br>
 
+
+</details>
+
+<details>
+<summary>Lecture 3.5 Making To Do List Part 2.</summary>
+<br>
+
+> JS Object
+>> JSON.stringify(param) : JS object를 String으로 바꿔준다. <br>
+>> JSON.parse(param) : String을 Array 형태로 바꿔준다.
+
+<todo.js>
+
+```javascript
+function saveToDos(toDos) {
+    localStorage.setItem(TODOS_LOCAL_STORAGE, JSON.stringify(toDos))
+}
+```
+
+```javascript
+function loadToDos() {
+    const loadedToDos = localStorage.getItem(TODOS_LOCAL_STORAGE)
+
+    if (loadedToDos !== null) {
+        console.log(loadedToDos)
+
+        const parsedToDos = JSON.parse(loadedToDos)
+        console.log(parsedToDos)
+    }
+}
+```
+
+<br>
+
+> forEach loop
+>> Array의 첫번쨰부터 마지막까지 반복하면서 item을 꺼낼수 있다. <br>
+>> 즉, forEach loop은 Array를 위한 function이다!
+
+<todo.js>
+
+```javascript
+parsedToDos.forEach(function(toDo) {
+            console.log(toDo.text)
+        })
+```
+아래 처럼 할 수도 있다.
+
+```javascript
+function something(toDo) {
+    console.log(toDo.text)
+}
+
+parsedToDos.forEach(something)
+```
 
 </details>
