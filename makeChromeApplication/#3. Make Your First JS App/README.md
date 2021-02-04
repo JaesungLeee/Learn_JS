@@ -239,3 +239,27 @@ function filterFn(toDo) {
 2. item의 id가 1인것 만 return해 새로운 cleanToDos Array에 넣음
 
 </details>
+
+<details>
+<summary>Lecture 3.7 Image Background</summary>
+<br>
+
+> RandomNumber
+>> Math라는 module을 사용 <br>
+>> Math.random() * 5 : 1 ~ 5 까지의 난수  <br>
+>> Math.floor() : 내림 <br>
+>> Math.ceil() : 올림 <br>
+>> Math.ceil(Math.random() * 5) : 1 ~ 5 
+
+
+<background.js>
+
+```javascript
+function generateRandom() {
+    const number = Math.floor(Math.random() * 5)
+    return number
+}
+```
+
+
+</details>
