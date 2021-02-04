@@ -261,5 +261,56 @@ function generateRandom() {
 }
 ```
 
+</details>
 
+<details>
+<summary>Lecture 3.8~9 Getting the Weather</summary>
+<br>
+
+> navigator.geolocation.getCurrentPosition(func, func)
+>> 현재 위치를 가져오는 api <br>
+>> getCurrentPosition(성공 func, 실패 func)
+
+<background.js>
+
+```javascript
+function handleGeoSuccess(position) {
+    const latitude = position.coords.latitude
+    const longitude = position.coords.longitude
+    const coordsObject = {
+        latitude : latitude,
+        longitude : longitude
+    }
+    saveCoords(coordsObject)
+    getWeather(latitude, longitude)
+}
+
+function handleGeoError() {
+    console.log("Can't access geo location")
+}
+
+function askForCoords() {
+    navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError)
+}
+```
+
+1. position.coords.latitude : 위도 <br> position.coords.longitude : 경도
+
+
+> fetch(url).then().then()
+>> fetch(url) : 해당 url을 통해 reponse를 받아오는 것 
+
+```javascript
+function getWeather(lat, lng) {
+    fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
+        ).then(function(response) { // url에서 response를 받아오면
+            return response.json() // response를 json으로 파싱해서 return
+        }).then(function(json) { // return받은 json에서 원하는 온도, 위치를 가져옴
+            const temperature = json.main.temp
+            const place = json.name
+            weather.innerText = `${temperature} at ${place}`
+        })
+}
+```
 </details>
