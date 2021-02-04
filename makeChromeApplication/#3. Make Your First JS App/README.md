@@ -206,3 +206,36 @@ parsedToDos.forEach(something)
 ```
 
 </details>
+
+<details>
+<summary>Lecture 3.6 Making To Do List Part 3.</summary>
+<br>
+
+> console.dir(object)
+>> object의 속성들을 볼 수 있음.
+>>> ex) console.dir(button) : button의 속성을 확인할 수 있음.
+
+<todo.js>
+
+```javascript
+function deleteToDo(event) {
+    console.dir(event.target)
+}
+```
+
+> array.filter(function)
+>> array에 있는 모든 item들을 function을 통해 검사함.
+>> Array의 모든 item을 검사한다는 점에서 forEach와 유사
+
+```javascript
+const cleanToDos = toDos.filter(filterFn)
+
+function filterFn(toDo) {
+    return toDo.id === 1
+}
+```
+
+1. toDos라는 Array의 모든 item들을 filterFn 함수를 통해 검사
+2. item의 id가 1인것 만 return해 새로운 cleanToDos Array에 넣음
+
+</details>
