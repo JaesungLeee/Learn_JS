@@ -4,6 +4,8 @@ body {
 
 body {
     color : #34495e ;
+    margin: 0 auto;
+    width: 300px;
 }
 
 .clicked { /*class*/
